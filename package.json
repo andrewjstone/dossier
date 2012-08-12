@@ -1,7 +1,7 @@
 {
   "author": "Andrew J. Stone <andrew.j.stone.1@gmail.com> (github.com/andrewjstone)",
-  "name": "stats-redis",
-  "description": "A simple way to manage application statistics using redis",
+  "name": "dossier",
+  "description": "A simple way to manage application statistics using redis and node",
   "version": "0.0.0",
   "repository": {
     "url": ""
