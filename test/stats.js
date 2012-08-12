@@ -15,14 +15,16 @@ describe('sets', function() {
     }, done);
   });
 
-  it('get a set size of 3 for each bucket', function(done) {
+  it('get a set size of 3 for each sole time bucket', function(done) {
     var end = new Date();
-    stats.getSetSize(set, buckets, start, end, function(err, setSizes) {
+    stats.getSetSizes(set, buckets, start, end, function(err, setSizes) {
       assert(!err);
-      assert.equal(setSizes.m, 3);
-      assert.equal(setSizes.h, 3);
-      assert.equal(setSizes.d, 3);
-      assert.equal(setSizes.mo, 3);
+      ['h', 'd', 'mo'].forEach(function(bucket) {
+        var timeBuckets = setSizes[bucket];
+        assert.equal(timeBuckets.length, 1); 
+        assert(timeBuckets[0].time);
+        assert.equal(timeBuckets[0].size, 3);
+      });
       done();
     });
   });
