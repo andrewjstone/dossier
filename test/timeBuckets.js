@@ -8,6 +8,16 @@ describe('timeBucket API', function() {
     assert.equal(buckets.length, 4);
   });
 
+  it('get timebuckets for a range for "d" retention', function() {
+    var start = new Date();
+    var end = new Date(start.getTime()+1000*60*60*24*10); // 10 days later
+    var buckets = timeBuckets.getRange('d', start, end);
+    assert.equal(buckets.length, 11);
+    buckets.forEach(function(bucket) {
+      assert.equal(typeof bucket, 'string');
+    });
+  });
+
 });
 
 describe('timebased operations', function() {
