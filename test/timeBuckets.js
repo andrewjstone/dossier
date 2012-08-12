@@ -17,8 +17,8 @@ describe('timeBucket API', function() {
       assert.equal(typeof bucket, 'string');
     });
   });
-
 });
+
 
 describe('timebased operations', function() {
   it('get the next minute given a minute time bucket', function() {
