@@ -48,3 +48,19 @@ stats.getSetSizes('visitors', 'h', start, end, function(err, buckets) {
  * ```end``` - The end date for the returned buckets
 
  * ```buckets``` - ```[{bucket: '20120812', members: ['val1', 'val2']}]```
+
+### increment(counter, value, retentions, timestamp, callback) ->(err)
+  
+ * ```counter``` - name of the counter (string)
+ * ```value``` - value to increment by (number)
+ * ```retentions``` - A list of retentions - ['h', 'd'],
+ * ```[timestamp]``` - defaults to current time - (Date object)
+
+### getCounters(counter, retention, start, end, callback) -> (err, buckets)
+
+ * ```counter``` - name of the counter(string)
+ * ```retention``` - A single retention - 'mo'
+ * ```start``` - The start date for the returned buckets
+ * ```end``` - The end date for the returned buckets
+
+ * ```buckets``` - ```[{bucket: '20120812', count: 4}]```
